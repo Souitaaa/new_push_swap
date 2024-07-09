@@ -1,14 +1,14 @@
 NAME			= push_swap
 NAME_1          = checker
 
-SRCS	= ft_putstr.c ft_strlen.c ft_strjoin.c parsing.c \
+SRCS	= 	ft_putstr.c ft_strlen.c ft_strjoin.c parsing.c \
 			ft_memcpy.c ft_split.c fill_up_stack_a.c push_swap.c ft_strdup.c \
 			utils.c frees.c mini_sort.c moves_2.c moves.c index.c loot.c moves_3.c \
 
-SRCSB   = checker.c ft_putstr.c ft_strlen.c ft_strjoin.c parsing.c \
+SRCSB   = 	checker.c ft_putstr.c ft_strlen.c ft_strjoin.c parsing.c \
 			ft_memcpy.c ft_split.c fill_up_stack_a.c ft_strdup.c \
-			utils.c frees.c mini_sort.c moves_2.c moves.c index.c loot.c moves_3.c \
-			sort_bonus.c ft_strcmp.c get_next_line_utils.c get_next_line.c \
+			utils.c frees.c moves_bonus.c moves_bonus_2.c moves_bonus_3.c \
+			ft_strcmp.c get_next_line_utils.c get_next_line.c \
 
 					
 CC				= cc

@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:06:48 by csouita           #+#    #+#             */
-/*   Updated: 2024/07/09 17:56:30 by csouita          ###   ########.fr       */
+/*   Updated: 2024/07/09 18:12:53 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void the_move(char *line, t_list *stack_a, t_list *stack_b)
             // free_stacks(stack_a);
             // free_stacks(stack_b);
             // free(line);
-            ft_putstr_fd("Error",1);
+            ft_putstr_fd("Error1",1);
             exit(1);
         }
 }
@@ -70,6 +70,7 @@ void what_move(t_list *stack_a, t_list *stack_b)
     line = get_next_line(0);
     while(line)
     {
+        // printf("line == %s\n",line);
         the_move(line,stack_a,stack_b);
         free(line);
         line = get_next_line(0);
