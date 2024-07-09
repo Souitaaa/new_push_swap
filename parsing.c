@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: souita <souita@student.42.fr>              +#+  +:+       +#+        */
+/*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 18:04:13 by csouita           #+#    #+#             */
-/*   Updated: 2024/07/09 02:49:01 by souita           ###   ########.fr       */
+/*   Updated: 2024/07/09 17:44:51 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ long	ft_atoi(char *str)
 		if (str[i] == '-' || str[i] == '+')
 			return (-2147483649);
 	}
-	while (str[i++] == '0')
-		if ((ft_strlen(&str[i]) > 11))
+	while (str[i] == '0')
+		i++;
+	if ((ft_strlen(&str[i]) > 11))
 			return (-2147483649);
 	while (str[i] >= '0' && str[i] <= '9' && str[i])
 		res = res * 10 + str[i++] - '0';
@@ -70,7 +71,7 @@ void	check_doubles(t_list **stack_a, char **strs, int num)
 		{
 			free_stacks(stack_a);
 			free_strs(strs);
-			write(2, "Error2\n", 7);
+			write(2, "Error\n", 7);
 			exit(1);
 		}
 		tmp = tmp->next;
