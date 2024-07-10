@@ -6,7 +6,7 @@
 /*   By: csouita <csouita@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 00:06:48 by csouita           #+#    #+#             */
-/*   Updated: 2024/07/09 23:27:13 by csouita          ###   ########.fr       */
+/*   Updated: 2024/07/10 02:44:51 by csouita          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,27 @@ void is_it_sorted(t_list *stack_a,t_list *stack_b)
 {
     t_list *tmp ;
     tmp = stack_a;
-    if(ft_lstsize(stack_a) == 0)
-        ft_putstr_fd("KO-\n",2);
     while(tmp && tmp->next)
     {
         if(tmp->content > tmp->next->content)
-            ft_putstr_fd("KO-\n",2);
+        {
+            ft_putstr_fd("KO\n",2);
+            exit(1);
+        }
         tmp = tmp->next;
     }
-    if(ft_lstsize(stack_b) > 0)
-        ft_putstr_fd("KO-\n",2);
+    if(ft_lstsize(stack_a) == 0)
+    {
+        ft_putstr_fd("KO\n",2);
+        exit(1);
+    }
+    else if(ft_lstsize(stack_b) > 0)
+    {
+        ft_putstr_fd("KO\n",2);
+        exit(1);
+    }
     else    
-        ft_putstr_fd("OK-\n",1);
+        ft_putstr_fd("OK\n",1);
 }
 
 void the_move(char *line, t_list **stack_a, t_list **stack_b)
@@ -59,7 +68,7 @@ void the_move(char *line, t_list **stack_a, t_list **stack_b)
             // free_stacks(stack_a);
             // free_stacks(stack_b);
             // free(line);
-            ft_putstr_fd("Error1\n",1);
+            ft_putstr_fd("Error\n",1);
             exit(1);
         }
 }
@@ -68,16 +77,11 @@ void what_move(t_list **stack_a, t_list **stack_b)
 {
     char *line ;
     line = get_next_line(0);
-    ft_putstr_fd(line, 1);
     while(line)
     {
-      
         the_move(line,stack_a,stack_b);
-    
         free(line);
         line = get_next_line(0);
-        ft_putstr_fd(line, 1);
-
     }
 }
 
